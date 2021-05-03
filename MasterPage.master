@@ -1,0 +1,99 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <link rel="icon" href="assets/img/eslogo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>ExpertSquad</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+     <!-- FLEXSLIDER CSS -->
+<link href="assets/css/flexslider.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />    
+  <!-- Google	Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.aspx"><img class="logo-custom" src="assets/logo180-50.png" alt="" /></a>
+            </div>
+        <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.aspx">HOME</a></li>
+                     <li><a href="features.aspx">FEATURES</a></li>
+                    <li><a href="faculty.aspx">OUR TEAM</a></li>
+                     <%--<li><a href="cour">COURSES</a></li>--%>
+                     <li><a href="contactus.aspx">CONTACT-US</a></li>
+                    <asp:PlaceHolder ID="login" runat="server">
+                         <li><a href="signin.aspx">LOGIN</a></li>
+                     <li><a href="register.aspx">REGISTER</a></li>
+                    
+                     <%--<li><a href="admin/admin.aspx">ADMIN LOGIN</a></li>--%>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="logoutstudent" runat="server">
+                            <li><a href="students/studenthome.aspx">STUDENT HOME</a></li>
+                        <li><a href="students/studenthome.aspx"><asp:Image ID="Image1" runat="server" height="30px" Width="30px" /></a></li>
+                        <li><a href="students/studenthome.aspx"><%=HttpContext.Current.Session["first_name"]%></a></li>
+                        <li><a href="Signout.aspx">SIGN OUT</a></li>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="logoutteacher" runat="server">
+                            <li><a href="teachers/teacherhome.aspx">WELCOME</a></li>
+                        <li><a href="teachers/teacherhome.aspx"><asp:Image ID="Image2" runat="server" height="30px" Width="30px" /></a></li>
+                        <li><a href="teachers/teacherhome.aspx"><%=HttpContext.Current.Session["first_name"]%></a></li>
+                        <li><a href="Signout.aspx">SIGN OUT</a></li>
+                    </asp:PlaceHolder>
+                </ul>
+            </div>
+            </div>
+            </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+         <div id="footer" ><center>
+          &copy 2020 ExpertSquad | All Rights Reserved |  <%--<a href="http://binarytheme.com" style="color: #fff" target="_blank">--%>Design by : BrownSquad<%--</a>--%>
+    
+             </center>
+             <br />
+         </div>
+    </form>
+
+
+
+
+
+
+    
+    <!--  Jquery Core Script -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!--  Flexslider Scripts --> 
+         <script src="assets/js/jquery.flexslider.js"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="assets/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts --> 
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <!--  Custom Scripts --> 
+         <script src="assets/js/custom.js"></script>
+</body>
+</html>

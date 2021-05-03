@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="notes.master.cs" Inherits="notes_notes" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server"> <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+
+    <title>Wecome ExpertSquad Member</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <!-- header body -->
+    <header id="site-header" class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="../myprofile.aspx">
+          &nbsp&nbsp<span class="fa fa-shield">&nbsp&nbsp</span> <%=HttpContext.Current.Session["first_name"]%>&nbsp<%=HttpContext.Current.Session["last_name"]%>
+      </a>
+      <button class="navbar-toggler bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="../home.aspx">ExprtSquad <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../students/studenthome.aspx">Home </a>
+              </li >
+              <li class="nav-item active">
+                  <a class="nav-link" href="class-8.aspx">Class 8</a>
+              </li>
+              <li class="nav-item  active">
+                  <a class="nav-link" href="class-9.aspx">Class 9</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="class-10.aspx">Class 10</a>
+              </li>
+             <%-- <li class="nav-item">
+                  <a class="nav-link" href="../contactus.aspx">Contact</a>
+              </li>--%>
+              <li>
+                  <a class="nav-link" href="../Signout.aspx">&nbsp&nbspSign Out</a>
+              </li>
+          </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <ul class="navbar-nav">
+              <li class="nav-item">
+                 <a class="navbar-brand" href="../myprofile.aspx"> <asp:Image ID="Image1" runat="server" height="50px" Width="" /></a>
+              </li>
+          </ul>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</header>
+<!-- //site header -->
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        
+         <button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+  <span class="fa fa-angle-up"></span>
+</button>
+<!-- site footer -->
+<footer id="site-footer">
+  <div class="top-footer">
+    <div class="container my-md-5 my-4">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="footer-logo mb-3">
+            <a href="../home.aspx">
+              <span class="fa fa-shield"></span>&nbsp ExpertSquad
+            </a>
+          </div>
+          <div>
+            <p class="">We Always Try to Provide Best Service to you. <br />
+We are Blessed that you are using Our Service. With Your Continuous Support We Will Become More Better. <br />
+Thankyou For Being a Member in ExpertSquard</p>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-4 mt-lg-0 mt-5">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="../home.aspx">ExpertSquad Homepage</a></li>
+            <li><a href="../features.aspx"> Explore services</a></li>
+            <li><a href="../faculty.aspx"> Know Our Team Members</a></li>
+            <li><a href="../contactus.aspx"> Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-5 col-md-8 mt-lg-0 mt-5">
+          <h4 class="footer-title">ExpertSquad Newsletter</h4>
+          <p class="mb-4"> You will  be updated with the latest news from us.
+          </p>
+          <form class="newsletter-form">
+           <img src="assets/images/pen.png" height="150px"  alt="Hello Member" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 text-lg-left text-center mb-lg-0 mb-3">
+          <p class="copyright">© 2020 ExpertSquad. All Rights Reserved. Design by <a
+            href="https://w3layouts.com/">W3Layouts</a> and <a href="../faculty.aspx">BrownSquad Members</a> .</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- //site footer -->
+    </form>
+     <script>
+         // When the user scrolls down 20px from the top of the document, show the button
+         window.onscroll = function () {
+             scrollFunction()
+         };
+         function scrollFunction() {
+             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                 document.getElementById("movetop").style.display = "block";
+             } else {
+                 document.getElementById("movetop").style.display = "none";
+             }
+         }
+         // When the user clicks on the button, scroll to the top of the document
+         function topFunction() {
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+         }
+</script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+<script src='assets/js/particles.min.js'></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            margin: 10,
+            nav: true,
+            loop: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    })
+</script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+</script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
